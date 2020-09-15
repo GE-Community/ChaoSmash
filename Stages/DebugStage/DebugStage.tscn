@@ -10,6 +10,7 @@ extents = Vector2( 144, 8 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0, 100 )
 shape = SubResource( 1 )
 
 [node name="ExamplePlayer" parent="." instance=ExtResource( 1 )]
