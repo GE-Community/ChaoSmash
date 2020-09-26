@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Menu/Buttons/PlayBtn.png" type="Texture" id=1]
+[ext_resource path="res://Menu/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://Menu/Buttons/PlayBtnPressed.png" type="Texture" id=3]
+[ext_resource path="res://Menu/Buttons/Settingsbtn.png" type="Texture" id=4]
+[ext_resource path="res://Menu/Buttons/SettingsPressed.png" type="Texture" id=5]
+[ext_resource path="res://Menu/Buttons/QuitBtn.png" type="Texture" id=6]
+[ext_resource path="res://Menu/Buttons/QuitBtnPressed.png" type="Texture" id=7]
+[ext_resource path="res://Menu/Righteous-Regular.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+outline_size = 2
+outline_color = Color( 1, 0.435294, 0, 1 )
+use_filter = true
+font_data = ExtResource( 8 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Buttons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 69.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons/CenterContainer"]
+margin_left = 203.0
+margin_top = 62.0
+margin_right = 308.0
+margin_bottom = 157.0
+alignment = 1
+
+[node name="PlayBtn" type="TextureButton" parent="Buttons/CenterContainer/VBoxContainer"]
+margin_right = 105.0
+margin_bottom = 29.0
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 3 )
+
+[node name="SettingsBtn" type="TextureButton" parent="Buttons/CenterContainer/VBoxContainer"]
+margin_top = 33.0
+margin_right = 105.0
+margin_bottom = 62.0
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+
+[node name="QuitBtn" type="TextureButton" parent="Buttons/CenterContainer/VBoxContainer"]
+margin_top = 66.0
+margin_right = 105.0
+margin_bottom = 95.0
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 167.0
+margin_top = 50.0
+margin_right = 344.0
+margin_bottom = 86.0
+grow_horizontal = 2
+rect_pivot_offset = Vector2( 139, 0 )
+custom_fonts/font = SubResource( 1 )
+text = "CHAOSMASH"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Buttons/CenterContainer/VBoxContainer/PlayBtn" to="." method="_on_PlayBtn_pressed"]
+[connection signal="pressed" from="Buttons/CenterContainer/VBoxContainer/SettingsBtn" to="." method="_on_SettingsBtn_pressed"]
+[connection signal="pressed" from="Buttons/CenterContainer/VBoxContainer/QuitBtn" to="." method="_on_QuitBtn_pressed"]

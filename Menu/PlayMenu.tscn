@@ -1,0 +1,145 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Menu/PlayMenu.gd" type="Script" id=1]
+[ext_resource path="res://Menu/Buttons/CreateRoomPressed.png" type="Texture" id=2]
+[ext_resource path="res://Menu/Buttons/JoinRoomPressed.png" type="Texture" id=3]
+[ext_resource path="res://Menu/Buttons/TrainingBtnPressed.png" type="Texture" id=4]
+[ext_resource path="res://Menu/Buttons/JoinRoom.png" type="Texture" id=5]
+[ext_resource path="res://Menu/Buttons/CreateRoom.png" type="Texture" id=6]
+[ext_resource path="res://Menu/Buttons/OfflineBtn.png" type="Texture" id=7]
+[ext_resource path="res://Menu/Buttons/OfflineBtnPressed.png" type="Texture" id=8]
+[ext_resource path="res://Menu/Buttons/TrainingBtn.png" type="Texture" id=9]
+[ext_resource path="res://Menu/Righteous-Regular.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Menu/Buttons/BackBtn.png" type="Texture" id=11]
+[ext_resource path="res://Menu/Buttons/BackBtnPressed.png" type="Texture" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+outline_size = 3
+outline_color = Color( 1, 0.435294, 0, 1 )
+use_filter = true
+extra_spacing_char = 3
+font_data = ExtResource( 10 )
+
+[node name="PlayMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Buttons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons/CenterContainer"]
+margin_left = 143.0
+margin_top = 56.0
+margin_right = 368.0
+margin_bottom = 232.0
+custom_constants/separation = 15
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Buttons/CenterContainer/VBoxContainer"]
+margin_right = 225.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 1 )
+text = "PLAY"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Buttons/CenterContainer/VBoxContainer"]
+margin_top = 59.0
+margin_right = 225.0
+margin_bottom = 88.0
+custom_constants/separation = 15
+alignment = 1
+
+[node name="CreateRoomBtn" type="TextureButton" parent="Buttons/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_right = 105.0
+margin_bottom = 29.0
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 2 )
+
+[node name="JoinRoomBtn" type="TextureButton" parent="Buttons/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 120.0
+margin_right = 225.0
+margin_bottom = 29.0
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 3 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Buttons/CenterContainer/VBoxContainer"]
+margin_top = 103.0
+margin_right = 225.0
+margin_bottom = 132.0
+custom_constants/separation = 15
+alignment = 1
+
+[node name="OfflineBtn" type="TextureButton" parent="Buttons/CenterContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 105.0
+margin_bottom = 29.0
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+
+[node name="TrainingBtn" type="TextureButton" parent="Buttons/CenterContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 120.0
+margin_right = 225.0
+margin_bottom = 29.0
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 4 )
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Buttons/CenterContainer/VBoxContainer"]
+margin_top = 147.0
+margin_right = 225.0
+margin_bottom = 176.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackBtn" type="TextureButton" parent="Buttons/CenterContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 60.0
+margin_right = 165.0
+margin_bottom = 29.0
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+stretch_mode = 3
+[connection signal="pressed" from="Buttons/CenterContainer/VBoxContainer/HBoxContainer/CreateRoomBtn" to="." method="_on_CreateRoomBtn_pressed"]
+[connection signal="pressed" from="Buttons/CenterContainer/VBoxContainer/HBoxContainer/JoinRoomBtn" to="." method="_on_JoinRoomBtn_pressed"]
+[connection signal="pressed" from="Buttons/CenterContainer/VBoxContainer/HBoxContainer2/OfflineBtn" to="." method="_on_OfflineBtn_pressed"]
+[connection signal="pressed" from="Buttons/CenterContainer/VBoxContainer/HBoxContainer2/TrainingBtn" to="." method="_on_TrainingBtn_pressed"]
+[connection signal="pressed" from="Buttons/CenterContainer/VBoxContainer/HBoxContainer3/BackBtn" to="." method="_on_BackBtn_pressed"]
