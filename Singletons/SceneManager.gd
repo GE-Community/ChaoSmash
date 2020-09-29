@@ -10,7 +10,7 @@ onready var change_timer : Timer = $ChangeTimer
 
 func goto(location : String):
 	color_rect.show()
-	anim_player.play("TansAnim")
+	anim_player.play("TransAnim")
 	change_timer.start()
 	nextScene = location
 

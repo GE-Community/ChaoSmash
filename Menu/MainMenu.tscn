@@ -1,20 +1,20 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Menu/Buttons/PlayBtn.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Art/UI/Buttons/SettingsPressed.png" type="Texture" id=1]
 [ext_resource path="res://Menu/MainMenu.gd" type="Script" id=2]
-[ext_resource path="res://Menu/Buttons/PlayBtnPressed.png" type="Texture" id=3]
-[ext_resource path="res://Menu/Buttons/Settingsbtn.png" type="Texture" id=4]
-[ext_resource path="res://Menu/Buttons/SettingsPressed.png" type="Texture" id=5]
-[ext_resource path="res://Menu/Buttons/QuitBtn.png" type="Texture" id=6]
-[ext_resource path="res://Menu/Buttons/QuitBtnPressed.png" type="Texture" id=7]
-[ext_resource path="res://Menu/Righteous-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Assets/Fonts/Righteous-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Art/UI/Buttons/QuitBtnPressed.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/UI/Buttons/Settingsbtn.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Art/UI/Buttons/PlayBtn.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Art/UI/Buttons/QuitBtn.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Art/UI/Buttons/PlayBtnPressed.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
 outline_size = 2
 outline_color = Color( 1, 0.435294, 0, 1 )
 use_filter = true
-font_data = ExtResource( 8 )
+font_data = ExtResource( 3 )
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -56,8 +56,8 @@ margin_right = 105.0
 margin_bottom = 29.0
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 1 )
-texture_pressed = ExtResource( 3 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 8 )
 
 [node name="SettingsBtn" type="TextureButton" parent="Buttons/CenterContainer/VBoxContainer"]
 margin_top = 33.0
@@ -65,8 +65,8 @@ margin_right = 105.0
 margin_bottom = 62.0
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 1 )
 
 [node name="QuitBtn" type="TextureButton" parent="Buttons/CenterContainer/VBoxContainer"]
 margin_top = 66.0
@@ -74,8 +74,8 @@ margin_right = 105.0
 margin_bottom = 95.0
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 4 )
 
 [node name="Title" type="Label" parent="."]
 margin_left = 167.0

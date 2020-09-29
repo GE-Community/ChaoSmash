@@ -1,17 +1,17 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Menu/PlayMenu.gd" type="Script" id=1]
-[ext_resource path="res://Menu/Buttons/CreateRoomPressed.png" type="Texture" id=2]
-[ext_resource path="res://Menu/Buttons/JoinRoomPressed.png" type="Texture" id=3]
-[ext_resource path="res://Menu/Buttons/TrainingBtnPressed.png" type="Texture" id=4]
-[ext_resource path="res://Menu/Buttons/JoinRoom.png" type="Texture" id=5]
-[ext_resource path="res://Menu/Buttons/CreateRoom.png" type="Texture" id=6]
-[ext_resource path="res://Menu/Buttons/OfflineBtn.png" type="Texture" id=7]
-[ext_resource path="res://Menu/Buttons/OfflineBtnPressed.png" type="Texture" id=8]
-[ext_resource path="res://Menu/Buttons/TrainingBtn.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Art/UI/Buttons/CreateRoomPressed.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/UI/Buttons/OfflineBtnPressed.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/UI/Buttons/OfflineBtn.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/UI/Buttons/TrainingBtn.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Art/UI/Buttons/CreateRoom.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Art/UI/Buttons/BackBtnPressed.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Art/UI/Buttons/BackBtn.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Art/UI/Buttons/TrainingBtnPressed.png" type="Texture" id=9]
 [ext_resource path="res://Menu/Righteous-Regular.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://Menu/Buttons/BackBtn.png" type="Texture" id=11]
-[ext_resource path="res://Menu/Buttons/BackBtnPressed.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Art/UI/Buttons/JoinRoomPressed.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Art/UI/Buttons/JoinRoom.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -52,9 +52,9 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Buttons/CenterContainer"]
 margin_left = 143.0
-margin_top = 56.0
+margin_top = 77.0
 margin_right = 368.0
-margin_bottom = 232.0
+margin_bottom = 211.0
 custom_constants/separation = 15
 alignment = 1
 __meta__ = {
@@ -63,7 +63,7 @@ __meta__ = {
 
 [node name="Title" type="Label" parent="Buttons/CenterContainer/VBoxContainer"]
 margin_right = 225.0
-margin_bottom = 44.0
+margin_bottom = 2.0
 custom_fonts/font = SubResource( 1 )
 text = "PLAY"
 align = 1
@@ -73,9 +73,9 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Buttons/CenterContainer/VBoxContainer"]
-margin_top = 59.0
+margin_top = 17.0
 margin_right = 225.0
-margin_bottom = 88.0
+margin_bottom = 46.0
 custom_constants/separation = 15
 alignment = 1
 
@@ -93,13 +93,13 @@ margin_right = 225.0
 margin_bottom = 29.0
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 3 )
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 11 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Buttons/CenterContainer/VBoxContainer"]
-margin_top = 103.0
+margin_top = 61.0
 margin_right = 225.0
-margin_bottom = 132.0
+margin_bottom = 90.0
 custom_constants/separation = 15
 alignment = 1
 
@@ -108,8 +108,8 @@ margin_right = 105.0
 margin_bottom = 29.0
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
 
 [node name="TrainingBtn" type="TextureButton" parent="Buttons/CenterContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 120.0
@@ -117,13 +117,13 @@ margin_right = 225.0
 margin_bottom = 29.0
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 9 )
-texture_pressed = ExtResource( 4 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 9 )
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Buttons/CenterContainer/VBoxContainer"]
-margin_top = 147.0
+margin_top = 105.0
 margin_right = 225.0
-margin_bottom = 176.0
+margin_bottom = 134.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -135,8 +135,8 @@ margin_right = 165.0
 margin_bottom = 29.0
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 12 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 7 )
 stretch_mode = 3
 [connection signal="pressed" from="Buttons/CenterContainer/VBoxContainer/HBoxContainer/CreateRoomBtn" to="." method="_on_CreateRoomBtn_pressed"]
 [connection signal="pressed" from="Buttons/CenterContainer/VBoxContainer/HBoxContainer/JoinRoomBtn" to="." method="_on_JoinRoomBtn_pressed"]

@@ -35,7 +35,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=3]
-resource_name = "TansAnim"
+resource_name = "TransAnim"
 length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -66,7 +66,7 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
 "anims/Fade In" = SubResource( 1 )
 "anims/Fade out" = SubResource( 2 )
-anims/TansAnim = SubResource( 3 )
+anims/TransAnim = SubResource( 3 )
 
 [node name="ChangeTimer" type="Timer" parent="."]
 wait_time = 0.4

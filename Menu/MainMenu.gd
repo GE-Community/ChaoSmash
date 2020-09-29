@@ -1,7 +1,8 @@
 extends Control
 
 # Variables
-var backgrounds : Array = ["res://Menu/Backgrounds/menu.png", "res://Menu/Backgrounds/menu2.png"]
+var backgrounds : Array = ["res://Assets/Art/UI/Background/menu2.png",
+"res://Assets/Art/UI/Background/menu.png"]
 
 # Onready Variables
 onready var background_node : TextureRect = $Background
