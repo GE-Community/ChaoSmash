@@ -20,10 +20,10 @@ func _on_JoinRoomBtn_pressed():
 	pass # To be replaced by kevin's multiplayer code
 
 func _on_OfflineBtn_pressed():
-	pass # To be replaced by code for offline mode
+	SceneManager.goto("Debug Stage") # Change Scene to Debug Stage
 
 func _on_TrainingBtn_pressed():
-	pass # To be replaced by code for offline mode
+	SceneManager.goto("Debug Stage") # Change Scene to Debug Stage
 
 func _on_BackBtn_pressed():
 	SceneManager.goto("MainMenu") # Change Menu To Main Menu

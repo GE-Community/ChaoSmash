@@ -21,7 +21,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-SceneManager="*res://Singletons/SceneManager.gd"
+SceneManager="*res://Singletons/SceneManager.tscn"
 
 [display]
 
