@@ -1,5 +1,5 @@
 extends KinematicBody2D
-
+"""
 #Variables
 var velocity : Vector2 = Vector2(0, 0)
 var target_velocity : Vector2 = Vector2(0, 0)
@@ -43,3 +43,4 @@ func _physics_process(delta):
 	velocity = velocity.linear_interpolate(target_velocity, 0.1) #interpolating the velocity
 	velocity.y += gravity * Speed * delta #Adding Gravity
 	velocity = move_and_slide(velocity , Vector2.UP)
+"""
