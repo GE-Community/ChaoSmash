@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://StateMachine.gd"
+} ]
 _global_script_class_icons={
-
+"StateMachine": ""
 }
 
 [application]
@@ -22,6 +27,7 @@ config/icon="res://icon.png"
 [autoload]
 
 SceneManager="*res://Singletons/SceneManager.tscn"
+Globals="*res://Singletons/Globals.gd"
 
 [display]
 

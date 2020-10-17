@@ -13,6 +13,8 @@ speed_stat = 10
 strength_stat = 10
 defence_stat = 10
 
+[node name="BaseFSM" type="Node" parent="."]
+
 [node name="Body" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Body"]

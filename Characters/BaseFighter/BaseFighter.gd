@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 onready var ground_raycasts = $GroundRaycasts
 onready var body = $Body
+onready var baseFSM = $BaseFSM
 
 
 var velocity = Vector2()
@@ -27,12 +28,13 @@ func error_start_check():
 	if speed_stat == 0 ||strength_stat == 0 ||defence_stat == 0:
 		print("stats can not be zero!")
 		return false
-	if !ground_raycasts:
+	elif !ground_raycasts:
 		print("You must add ground raycasts to player. Use Node2d named 'GroundRaycasts' with raycast2ds as children")
-		return false
-	if !body:
+	elif !body:
 		print("Please Store all visual nodes such as sprites inside a Node2D named 'Body'")
 		return false
+	elif !baseFSM:
+		print("Please create a node named BaseFSM that inherits from res://Characters/BaseFighter/BaseStateMachine.gd ")
 	else:
 		return true
 
@@ -68,7 +70,7 @@ func _input(event):
 	
 	
 	if event.is_action_released("player_jump") && velocity.y < min_jump_velocity:
-		jump_velocity = min_jump_velocity
+		velocity.y = min_jump_velocity
 
 
 
