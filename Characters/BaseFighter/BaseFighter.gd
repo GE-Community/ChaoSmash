@@ -5,28 +5,19 @@ onready var body = $Body
 onready var baseFSM = $BaseFSM
 
 
-
-
-var move_direction = 0
-var velocity = Vector2()
-var max_speed = 580
-var max_strength = 100
-var max_defence = 100
-var speed
-var strength
-var defence
-var jump_velocity = -620
-var min_jump_velocity = -200
-var is_grounded = false
-
-
+#Variables
+var velocity : Vector2 = Vector2()
+var is_grounded : bool = false
+var current_jumps : int = 0
+var move_direction
 
 export var stats = {
 	"speed" :  0, #make it 1-10
 	"strength" : 0, #same as above, make it 1-10
 	"defense" : 0,
 	"jump_velocity" : -620,
-	"min_jump_velocity" : -200 #recommended -200
+	"min_jump_velocity" : -200, #reommended -200
+	"air_jumps" : 1
 }
 
 
@@ -66,6 +57,15 @@ func _ready():
 
 func jump():
 	velocity.y = jump_velocity
+
+func _air_jump():
+	if current_jumps > 0:
+		jump()
+		current_jumps -= 1
+
+
+func _reset_air_jump():
+	current_jumps = stats.air_jumps
 
 func _check_is_grounded():
 	for raycast in ground_raycasts.get_children():

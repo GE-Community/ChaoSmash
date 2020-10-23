@@ -1,5 +1,5 @@
 extends StateMachine
-
+class_name BaseFSM
 
 func _ready():
 	add_state("idle")
@@ -12,13 +12,18 @@ func _input(event):
 	if [states.idle,states.run].has(state):
 		if event.is_action_pressed("player_jump"):
 			parent.jump()
-		
-		
+	
+	if [states.jump, states.fall].has(state):
+		if event.is_action_pressed("player_jump"):
+			parent._air_jump()
+	
 	if state == states.jump:
-		if event.is_action_released("player_jump") && parent.velocity.y < parent.min_jump_velocity:
-			parent.velocity.y = parent.min_jump_velocity
+		if event.is_action_released("player_jump") && parent.velocity.y < parent.stats.min_jump_velocity:
+			parent.velocity.y = parent.stats.min_jump_velocity
 
 func _state_logic(delta):
+	if parent.is_grounded && parent.current_jumps != parent.stats.air_jumps:
+		parent._reset_air_jump()
 	parent._handle_sideways_movement()
 	parent._apply_gravity(delta)
 	parent._apply_movement()
