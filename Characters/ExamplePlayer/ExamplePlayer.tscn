@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Characters/ExamplePlayer/ExamplePlayer.gd" type="Script" id=2]
+[ext_resource path="res://Characters/BaseFighter/BaseStateMachine.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30, 31 )
@@ -9,11 +10,9 @@ extents = Vector2( 30, 31 )
 [node name="Fighter" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 2 )
-speed_stat = 10
-strength_stat = 10
-defence_stat = 10
 
 [node name="BaseFSM" type="Node" parent="."]
+script = ExtResource( 3 )
 
 [node name="Body" type="Node2D" parent="."]
 
