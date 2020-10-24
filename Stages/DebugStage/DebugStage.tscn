@@ -42,14 +42,9 @@ tile_data = PoolIntArray( -196605, 0, 0, -196604, 0, 0, -196602, 0, 0, -131070, 
 
 [node name="SadCat" parent="." instance=ExtResource( 3 )]
 stats = {
-"air_control": 0.05,
-"air_jumps": 1,
-"defense": 10,
-"ground_friction": 0.1,
-"jump_velocity": -620,
-"min_jump_velocity": -200,
-"speed": 5,
-"strength": 10
+"defense": 1,
+"speed": 4,
+"strength": 1
 }
 
 [node name="Camera2D" type="Camera2D" parent="SadCat"]
