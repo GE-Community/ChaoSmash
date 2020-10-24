@@ -27,6 +27,9 @@ func _state_logic(delta):
 	parent._handle_sideways_movement()
 	parent._apply_gravity(delta)
 	parent._apply_movement()
+	
+	if [states.run, states.jump, states.fall].has(state):
+		parent._update_facing()
 
 func _get_transition(delta):
 	match state:

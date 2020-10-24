@@ -22,7 +22,9 @@ export var stats = {
 	"defense" : 0,
 	"jump_velocity" : -620,
 	"min_jump_velocity" : -200, #reommended -200
-	"air_jumps" : 1
+	"air_jumps" : 1,
+	"air_control" : 0.05,
+	"ground_friction" : 0.1
 }
 
 
@@ -78,17 +80,7 @@ func _check_is_grounded():
 
 
 func _apply_gravity(delta):
-	velocity.y += Globals.gravity*delta
-
-
-
-
-
-
-
-func _physics_process(delta):
-	pass
-
+	velocity.y += Globals.gravity * delta
 
 
 func _apply_movement():
@@ -99,11 +91,13 @@ func _apply_movement():
 
 
 func _handle_sideways_movement():
-	move_direction = -int(Input.is_action_pressed("player_left"))+int(Input.is_action_pressed("player_right"))
+	
+	move_direction = -int(Input.is_action_pressed("player_left")) +int(Input.is_action_pressed("player_right"))
 	velocity.x = lerp(velocity.x, stats.speed * move_direction,_get_h_weight())
 
+func _update_facing():
 	if move_direction != 0:
 		body.scale.x = move_direction
 
 func _get_h_weight():
-	return 0.2 if is_grounded else 0.1
+	return stats.ground_friction if is_grounded else stats.air_control

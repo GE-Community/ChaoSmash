@@ -42,8 +42,10 @@ tile_data = PoolIntArray( -131075, 0, 0, -196605, 0, 0, -196604, 0, 0, -196602, 
 
 [node name="SadCat" parent="." instance=ExtResource( 3 )]
 stats = {
+"air_control": 0.05,
 "air_jumps": 1,
 "defense": 10,
+"ground_friction": 0.1,
 "jump_velocity": -620,
 "min_jump_velocity": -200,
 "speed": 10,

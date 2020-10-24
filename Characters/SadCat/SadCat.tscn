@@ -11,8 +11,10 @@ extents = Vector2( 7, 19 )
 [node name="SadCat" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 stats = {
+"air_control": 0.05,
 "air_jumps": 1,
 "defense": 10,
+"ground_friction": 0.1,
 "jump_velocity": -620,
 "min_jump_velocity": -200,
 "speed": 10,
