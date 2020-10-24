@@ -1,6 +1,6 @@
 # ChaosJam
 
-A chaotic game being made by the developers of GE Community
+A chaotic game being made by the developers of the GE Community
 
 > Google Doc Link: https://docs.google.com/document/d/1W3Du9Av2LqmVnzlT6fAwmSIgDIgUEzcMVPlRebAIOto/edit?usp=sharing
 
@@ -14,5 +14,5 @@ A chaotic game being made by the developers of GE Community
   4. commit and push
   5. Make a new Pull Request
 ##### Note
-  1. You can'r merge your Pull request before someone reviewed it and approved it
+  1. Your PR needs to be approved before it can be merged
   2. Use comments in your code
