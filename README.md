@@ -8,10 +8,11 @@ A chaotic game being made by the developers of GE Community
 
 ### How to Contribute to this repository.
 ##### Steps
-  1.Fork this repository
-  
-  2.Do the changes
-  
-  3.Push it to your fork
-  
-  4.start a new pull request.
+  1. Fork this repository
+  2. Make a branch with the name of the feature you are implementing
+  3. Edit
+  4. commit and push
+  5. Make a new Pull Request
+##### Note
+  1. You can'r merge your Pull request before someone reviewed it and approved it
+  2. Use comments in your code
