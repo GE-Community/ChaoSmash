@@ -1,4 +1,4 @@
 extends Node
 
 
-var gravity = 1000
+var gravity = 1500
