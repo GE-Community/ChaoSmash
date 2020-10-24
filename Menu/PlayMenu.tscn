@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/Art/UI/Buttons/BackBtnPressed.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Art/UI/Buttons/BackBtn.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Art/UI/Buttons/TrainingBtnPressed.png" type="Texture" id=9]
-[ext_resource path="res://Menu/Righteous-Regular.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Assets/Fonts/Righteous-Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Assets/Art/UI/Buttons/JoinRoomPressed.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Art/UI/Buttons/JoinRoom.png" type="Texture" id=12]
 
@@ -52,9 +52,9 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Buttons/CenterContainer"]
 margin_left = 143.0
-margin_top = 77.0
+margin_top = 56.0
 margin_right = 368.0
-margin_bottom = 211.0
+margin_bottom = 232.0
 custom_constants/separation = 15
 alignment = 1
 __meta__ = {
@@ -63,7 +63,7 @@ __meta__ = {
 
 [node name="Title" type="Label" parent="Buttons/CenterContainer/VBoxContainer"]
 margin_right = 225.0
-margin_bottom = 2.0
+margin_bottom = 44.0
 custom_fonts/font = SubResource( 1 )
 text = "PLAY"
 align = 1
@@ -73,9 +73,9 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Buttons/CenterContainer/VBoxContainer"]
-margin_top = 17.0
+margin_top = 59.0
 margin_right = 225.0
-margin_bottom = 46.0
+margin_bottom = 88.0
 custom_constants/separation = 15
 alignment = 1
 
@@ -97,9 +97,9 @@ texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 11 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Buttons/CenterContainer/VBoxContainer"]
-margin_top = 61.0
+margin_top = 103.0
 margin_right = 225.0
-margin_bottom = 90.0
+margin_bottom = 132.0
 custom_constants/separation = 15
 alignment = 1
 
@@ -121,9 +121,9 @@ texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 9 )
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Buttons/CenterContainer/VBoxContainer"]
-margin_top = 105.0
+margin_top = 147.0
 margin_right = 225.0
-margin_bottom = 134.0
+margin_bottom = 176.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
