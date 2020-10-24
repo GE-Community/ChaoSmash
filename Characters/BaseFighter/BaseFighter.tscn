@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=5]
+resource_name = "dash"
 
 [sub_resource type="Animation" id=1]
 resource_name = "fall"
@@ -14,6 +17,9 @@ resource_name = "jump"
 [sub_resource type="Animation" id=4]
 resource_name = "run"
 
+[sub_resource type="Animation" id=6]
+resource_name = "hit"
+
 [node name="Fighter" type="KinematicBody2D"]
 collision_layer = 2
 __meta__ = {
@@ -22,12 +28,14 @@ Fill the animation slots with your own. Add slots as needed."
 }
 
 [node name="Animations" type="AnimationPlayer" parent="."]
+anims/dash = SubResource( 5 )
 anims/fall = SubResource( 1 )
 anims/idle = SubResource( 2 )
 anims/jump = SubResource( 3 )
 anims/run = SubResource( 4 )
 
 [node name="EffectAnimations" type="AnimationPlayer" parent="."]
+anims/hit = SubResource( 6 )
 
 [node name="BaseFSM" type="Node" parent="."]
 

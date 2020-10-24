@@ -17,7 +17,7 @@ stats = {
 "ground_friction": 0.1,
 "jump_velocity": -620,
 "min_jump_velocity": -200,
-"speed": 10,
+"speed": 4,
 "strength": 10
 }
 
