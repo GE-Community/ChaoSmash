@@ -11,12 +11,9 @@ extents = Vector2( 7, 19 )
 [node name="SadCat" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 stats = {
-"air_jumps": 1,
-"defense": 10,
-"jump_velocity": -620,
-"min_jump_velocity": -200,
-"speed": 10,
-"strength": 10
+"defense": 1,
+"speed": 4,
+"strength": 1
 }
 
 [node name="BaseFSM" parent="." index="2"]
