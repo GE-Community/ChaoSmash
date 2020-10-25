@@ -27,7 +27,7 @@ export var stats = {
 
 export var movement_settings = {
 	"jump_velocity" : -620,
-	"min_jump_velocity" : -200, #reommended -200
+	"min_jump_velocity" : -200, #recommended -200
 	"air_jumps" : 1,
 	"air_control" : 0.05, #must be lower than 0.1
 	"ground_friction" : 0.1, # must be lower than 0.3
