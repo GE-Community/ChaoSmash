@@ -7,8 +7,6 @@ var backgrounds : Array = ["res://Assets/Art/UI/Background/menu2.png",
 # Onready Variables
 onready var background_node : TextureRect = $Background
 onready var tagname_label : Label = $TagName
-onready var tagname_tween : Tween = $TagNameTween
-
 
 func _ready():
 	randomize() #Using Randomize so that rand_range gives random results every time

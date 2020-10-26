@@ -38,7 +38,19 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1, 2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 1, 1 ), Vector2( 0.8, 0.8 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -25.0, -20.0, -25.0 ]
 }
 
 [node name="MainMenu" type="Control"]
@@ -121,9 +133,12 @@ __meta__ = {
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = -41.0
-margin_bottom = -18.0
-rect_scale = Vector2( 1.32385, 1.32385 )
+margin_left = 150.0
+margin_top = -49.0
+margin_right = 150.0
+margin_bottom = -26.0
+rect_rotation = -23.5735
+rect_scale = Vector2( 0.85706, 0.85706 )
 rect_pivot_offset = Vector2( 256, 12 )
 custom_fonts/font = SubResource( 3 )
 text = "TEST"
