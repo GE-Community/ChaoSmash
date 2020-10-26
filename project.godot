@@ -8,20 +8,9 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "StateMachine",
-"class": "BaseFSM",
-"language": "GDScript",
-"path": "res://Characters/BaseFighter/BaseStateMachine.gd"
-}, {
-"base": "Node",
-"class": "StateMachine",
-"language": "GDScript",
-"path": "res://StateMachine.gd"
-} ]
+_global_script_classes=[  ]
 _global_script_class_icons={
-"BaseFSM": "",
-"StateMachine": ""
+
 }
 
 [application]
