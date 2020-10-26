@@ -3,12 +3,6 @@ extends Control
 # Variables
 var backgrounds : Array = ["res://Assets/Art/UI/Background/menu2.png",
 "res://Assets/Art/UI/Background/menu.png"]
-var tween_vals = [Vector2(0.8, 0.8), Vector2(1, 1)]
-
-#Consts
-const TRANS = Tween.TRANS_QUAD
-const EASE = Tween.EASE_IN_OUT
-const DURATION = 1
 
 # Onready Variables
 onready var background_node : TextureRect = $Background
@@ -27,8 +21,7 @@ func _ready():
 	var tagname_text = tempdata["tagnames"]
 	tagname_text.shuffle()
 	tagname_label.set_text(tagname_text[0])
-	tagname_tween.interpolate_property(tagname_label, "rect_scale", tween_vals[0], tween_vals[1], DURATION, TRANS, EASE)
-	tagname_tween.start()
+	$TagName/AnimationPlayer.play("Grow")
 
 func _on_PlayBtn_pressed():
 	SceneManager.goto("PlayMenu") # Changing scene to PlayMenu
@@ -38,10 +31,3 @@ func _on_SettingsBtn_pressed():
 
 func _on_QuitBtn_pressed():
 	get_tree().quit() # Quit the game
-
-func _on_TagNameTween_tween_completed(object, key):
-	var temp = tween_vals[0]
-	tween_vals[0] = tween_vals[1]
-	tween_vals[1] = temp
-	tagname_tween.interpolate_property(tagname_label, "rect_scale", tween_vals[0], tween_vals[1], DURATION, TRANS, EASE)
-	tagname_tween.start()
