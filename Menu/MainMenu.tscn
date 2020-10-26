@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Art/UI/Buttons/SettingsPressed.png" type="Texture" id=1]
 [ext_resource path="res://Menu/MainMenu.gd" type="Script" id=2]
@@ -9,11 +9,18 @@
 [ext_resource path="res://Assets/Art/UI/Buttons/QuitBtn.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Art/UI/Buttons/PlayBtnPressed.png" type="Texture" id=8]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 45
 outline_size = 2
 outline_color = Color( 1, 0.435294, 0, 1 )
 use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+outline_size = 1
+outline_color = Color( 0.0477473, 0.00224304, 0.0820312, 1 )
+extra_spacing_char = 2
 font_data = ExtResource( 3 )
 
 [node name="MainMenu" type="Control"]
@@ -84,13 +91,31 @@ margin_right = 344.0
 margin_bottom = 86.0
 grow_horizontal = 2
 rect_pivot_offset = Vector2( 139, 0 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "CHAOSMASH"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TagName" type="Label" parent="."]
+margin_left = 152.908
+margin_top = 92.4997
+margin_right = 664.908
+margin_bottom = 116.5
+rect_rotation = -45.0
+rect_pivot_offset = Vector2( 256, 12 )
+custom_fonts/font = SubResource( 3 )
+text = "TEST"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TagNameTween" type="Tween" parent="."]
 [connection signal="pressed" from="Buttons/CenterContainer/VBoxContainer/PlayBtn" to="." method="_on_PlayBtn_pressed"]
 [connection signal="pressed" from="Buttons/CenterContainer/VBoxContainer/SettingsBtn" to="." method="_on_SettingsBtn_pressed"]
 [connection signal="pressed" from="Buttons/CenterContainer/VBoxContainer/QuitBtn" to="." method="_on_QuitBtn_pressed"]
+[connection signal="tween_completed" from="TagNameTween" to="." method="_on_TagNameTween_tween_completed"]
