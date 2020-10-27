@@ -6,6 +6,8 @@ A chaotic game being made by the developers of the GE Community
 
 > Todo is in the projects tab of this repository
 
+> Miro Board Link: https://miro.com/welcomeonboard/JFTkjJW6Qsvmi6zfKrr6vtiff37WmCu8ily9xs5LBUPL3LKklauGOj61P73RC0O9
+
 ### How to Contribute to this repository.
 ##### Steps
   1. Fork this repository
