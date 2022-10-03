@@ -20,7 +20,7 @@ func set_background():
 	var file_name = dir.get_next()
 	var backgrounds = []
 	while file_name != "":
-		if !dir.current_is_dir():
+		if !dir.current_is_dir() and file_name.ends_with(".png"):
 			backgrounds.append(load(bg_directory+file_name))
 		file_name = dir.get_next()
 	backgrounds.shuffle()
