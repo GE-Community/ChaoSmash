@@ -1,25 +1,40 @@
 extends Control
 
-# Variables
-var backgrounds : Array = ["res://Assets/Art/UI/Background/menu2.png",
-"res://Assets/Art/UI/Background/menu.png"]
+const bg_directory = "res://Assets/Art/UI/Background/"
 
 # Onready Variables
-onready var background_node : TextureRect = $Background
+onready var background_rect : TextureRect = $Background
 onready var tagname_label : Label = $TagName
 
 func _ready():
-	randomize() #Using Randomize so that rand_range gives random results every time
-	var background : int = round(rand_range(0, backgrounds.size()-1)) # Getting a random index for background
-	var background_texture : Texture = load(backgrounds[background]) # Loading background texture
-	background_node.set_texture(background_texture) # Setting background
-	var tagname_file = File.new()
-	tagname_file.open("res://Menu/Tagname.json", File.READ)
-	var tempdata = parse_json(tagname_file.get_as_text())
-	var tagname_text = tempdata["tagnames"]
-	tagname_text.shuffle()
-	tagname_label.set_text(tagname_text[0])
+	randomize()
+	set_background()
+	set_tagname()
 	$TagName/AnimationPlayer.play("Grow")
+
+# Set a random background
+func set_background():
+	var dir = Directory.new()
+	dir.open(bg_directory)
+	dir.list_dir_begin(true)
+	var file_name = dir.get_next()
+	var backgrounds = []
+	while file_name != "":
+		if !dir.current_is_dir():
+			backgrounds.append(load(bg_directory+file_name))
+		file_name = dir.get_next()
+	backgrounds.shuffle()
+	var background_texture : Texture = backgrounds[0]
+	background_rect.set_texture(background_texture)
+
+func set_tagname():
+	var file = File.new()
+	file.open("res://Menu/Tags.csv", File.READ)
+	var tagnames = []
+	while !file.eof_reached():
+		tagnames.append_array(file.get_csv_line())
+	tagnames.shuffle()
+	tagname_label.set_text(tagnames[0])
 
 func _on_PlayBtn_pressed():
 	SceneManager.goto("PlayMenu") # Changing scene to PlayMenu
